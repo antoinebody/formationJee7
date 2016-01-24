@@ -1,0 +1,53 @@
+/**
+ * 
+ */
+
+if(!String.prototype.startsWith){
+    String.prototype.startsWith = function (str) {
+        return !this.indexOf(str);
+    }
+}
+
+if(!window.WebSocket)
+	throw new Error("WebSocket non supported")
+else
+	console.log("ws protocol supported")
+var webSocket = new WebSocket("ws://localhost:8080/ProjWebsocket/actions/myParameter");
+var webSocket2 = new WebSocket("ws://localhost:8080/ProjWebsocket/actions2/myParameter");
+
+webSocket.onmessage = receivedMessage;
+webSocket2.onmessage = receivedMessage2;
+function sendMessage() {
+	//Ex 1 : simple String
+	 webSocket.send("hello from client");
+
+}
+
+function sendMessage2() {
+	//Ex 2 : JSON Object
+	var objContact ={
+			type : "contact",
+			firstName : "dupont",
+			lastName : "test@test.com"
+	}
+	webSocket2.send(JSON.stringify(objContact));
+	
+}
+
+function receivedMessage2(event) {
+	
+}
+
+function receivedMessage(event) {
+	// Ex 1 : received simple String
+	//event.data : received data
+	
+	if(event.data.startsWith("yo")){
+		document.getElementById("yop").innerHTML = event.data;
+	}
+	else{
+		document.getElementById("res").innerHTML = event.data;
+	}
+		
+	//Ex 
+}

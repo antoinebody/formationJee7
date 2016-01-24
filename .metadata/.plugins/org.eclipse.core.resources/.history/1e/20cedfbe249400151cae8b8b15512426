@@ -1,0 +1,21 @@
+package fr.dawan.rs.client;
+
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.ws.rs.core.MediaType;
+
+public class RSHttpClient {
+	
+	public static void main(String[] args) throws Exception {
+		URL url = new URL("http://localhost:8080/projetRS/rest/compagnies/1");
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestMethod("GET");
+		conn.setRequestProperty("Accept", MediaType.APPLICATION_JSON);
+		// Send post request
+		conn.setDoOutput(true);
+
+	}
+
+}

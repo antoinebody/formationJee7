@@ -1,0 +1,8 @@
+#GlassFish 3
+#Fri Nov 27 16:05:45 CET 2015
+org.eclipse.jst.jee.server\:ProjWebsocket=C\:\\Formation\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\ProjWebsocket
+org.eclipse.jst.jee.server\:projectJEE7=C\:\\Formation\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\projectJEE7
+org.eclipse.jst.jee.server\:ProjJEE7=C\:\\Formation\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\ProjJEE7
+org.eclipse.jst.jee.server\:projetRS=C\:\\Formation\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\projetRS
+org.eclipse.jst.jee.server\:ProjWebsocketClient=C\:\\Formation\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\ProjWebsocketClient
+org.eclipse.jst.jee.server\:projJaxrsDynaClient=C\:\\Formation\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\projJaxrsDynaClient

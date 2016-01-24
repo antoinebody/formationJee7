@@ -1,0 +1,53 @@
+package fr.dawan.project.controlers;
+
+import java.io.IOException;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import javax.annotation.Resource;
+import javax.enterprise.concurrent.ManagedScheduledExecutorService;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class JSONServlet
+ */
+@SuppressWarnings("serial")
+@WebServlet("/ConcurrentController")
+public class ConcurrentController extends HttpServlet {
+
+	// la ressource de gestion de la concurrence récupérée depuis le server
+	@Resource(name = "concurrent/__defaultManagedScheduledExecutorService")
+	private ManagedScheduledExecutorService executorService;
+	
+	private AtomicInteger number;
+	
+	public ConcurrentController() {
+		this.number = new AtomicInteger();
+	}
+
+	@Override
+	public void init() throws ServletException {
+		executorService.scheduleWithFixedDelay(new Runnable() {
+
+			@Override
+			public void run() {
+				number.set((int) (Math.random()*100));
+			}
+
+		}, 0, 3, TimeUnit.SECONDS);
+		
+		executorService.schedule(new Callable<Void>() {
+		}, null;)
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.getWriter().append(String.valueOf(number.get()));
+	}
+
+}

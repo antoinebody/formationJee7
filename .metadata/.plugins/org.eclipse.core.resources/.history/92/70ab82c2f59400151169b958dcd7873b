@@ -1,0 +1,21 @@
+package fr.dawan.project.jpa;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Marque implements Serializable{
+	
+	@Id
+	private long id;
+	private String nomMarque;
+	
+	//on indique le champ qui 
+	@OneToMany(mappedBy="marque")
+	private List<Produit> produits;
+
+}

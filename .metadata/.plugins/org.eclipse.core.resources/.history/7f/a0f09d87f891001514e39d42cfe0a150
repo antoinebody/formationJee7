@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+var webSocket = new WebSocket("ws://localhost:8080/")
+function sendMessage(){
+	var socket new WebSocket("")
+}

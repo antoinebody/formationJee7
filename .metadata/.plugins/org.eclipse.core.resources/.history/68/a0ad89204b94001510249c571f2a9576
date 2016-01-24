@@ -1,0 +1,26 @@
+package fr.dawan.projet1.ws.validator.custom;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
+import fr.dawan.projet1.ws.beans.CompagnieAerienne;
+
+public class CustomValidator implements ConstraintValidator<CustomValidatorAnnotation, CompagnieAerienne>{
+	
+	private long maxIdValue;
+	private String customMessage; 
+
+	@Override
+	public void initialize(CustomValidatorAnnotation constraintAnnotation) {
+		maxIdValue = constraintAnnotation.maxIdValue();
+		customMessage = constraintAnnotation.customMessage();
+		
+	}
+
+	@Override
+	public boolean isValid(CompagnieAerienne value, ConstraintValidatorContext context) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

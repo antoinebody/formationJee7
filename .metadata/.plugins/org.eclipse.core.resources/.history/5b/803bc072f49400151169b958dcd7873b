@@ -1,0 +1,11 @@
+package fr.dawan.project.jpa;
+
+public enum EtatProduit {
+	
+	NEUF,OCCASION;
+	
+	public static void main(String[] args) {
+		UUID random = UUID.randomUUID();
+	}
+
+}

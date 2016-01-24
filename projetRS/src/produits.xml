@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produits>
+	<produit id="1">
+		<description>Toto</description>
+		<prix>500</prix>
+	</produit>
+	<produit id="2">
+		<description>Tutu</description>
+		<prix>100000</prix>
+	</produit>
+</produits>

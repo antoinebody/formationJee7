@@ -1,0 +1,30 @@
+package fr.dawan.project.controlers;
+
+import java.io.IOException;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import fr.dawan.project.ejb.SearchEjb;
+
+/**
+ * Servlet implementation class JSONServlet
+ */
+@SuppressWarnings("serial")
+@WebServlet("/SearchConcurrentController")
+public class SearchConcurrentController extends HttpServlet {
+	
+	@Inject
+	private SearchEjb ejb;
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		ejb.search(req.getParameter("searchField"));
+	}
+
+
+}

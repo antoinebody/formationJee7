@@ -1,0 +1,19 @@
+package fr.dawan.project.ejb;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.ejb.Stateless;
+import javax.enterprise.concurrent.ManagedExecutorService;
+
+@Stateless
+public class SerachEjb {
+	
+	@Resource(name="concurrent/__defaultManagedExecutorService")
+	private ManagedExecutorService executorService;
+	
+	public List<ResultatRecherche> search(String search){
+		return null;
+	}
+
+}

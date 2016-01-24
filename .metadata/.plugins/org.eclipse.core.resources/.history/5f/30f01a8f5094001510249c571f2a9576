@@ -1,0 +1,7 @@
+package fr.dawan.projet1.ws.validator.custom;
+
+import javax.validation.Payload;
+public class Severity {
+    public static class Info extends Payload {};
+    public static class Error extends Payload {};
+}

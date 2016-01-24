@@ -1,0 +1,19 @@
+package fr.dawan.project.jpa;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Id;
+
+@SuppressWarnings("serial")
+public class Fournisseur implements Serializable
+{
+	
+	@Id
+	private long id;
+	private String name;
+	
+	private List<Produit> produits;
+	
+
+}

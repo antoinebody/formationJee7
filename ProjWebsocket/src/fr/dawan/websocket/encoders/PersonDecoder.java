@@ -1,0 +1,59 @@
+package fr.dawan.websocket.encoders;
+
+import java.io.StringReader;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.json.Json;
+import javax.json.stream.JsonParser;
+import javax.websocket.DecodeException;
+import javax.websocket.Decoder;
+import javax.websocket.EndpointConfig;
+
+import fr.dawan.websocket.beans.Person;
+
+public class PersonDecoder implements Decoder.Text<Person> {
+	
+	private Map<String, String> messageMap;
+
+	@Override
+	public void destroy() {
+	}
+
+	@Override
+	public void init(EndpointConfig config) {
+	}
+
+	@Override
+	public Person decode(String s) throws DecodeException {
+		Person p = null;
+		if(willDecode(s)){
+			p = new Person();
+			p.setFirstName(messageMap.get("firstName")+"....");
+			p.setLastName(messageMap.get("lastName")+"....");
+		}
+		return p;
+	}
+
+	@Override
+	public boolean willDecode(String s) {
+		messageMap = new HashMap<String,String>();
+		JsonParser parser = Json.createParser(new StringReader(s));
+		while(parser.hasNext()){
+			if(parser.next()==JsonParser.Event.KEY_NAME){
+				String key = parser.getString();
+				parser.next();
+				String value = parser.getString();
+				messageMap.put(key, value);
+			}
+		}
+		
+		//vérification de l'ensemble des attributs
+		return messageMap.containsKey("firstName") 
+					&& messageMap.containsKey("lastName");
+	
+	}
+
+	
+
+}

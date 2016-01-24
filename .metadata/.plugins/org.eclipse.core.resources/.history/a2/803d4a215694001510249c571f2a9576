@@ -1,0 +1,27 @@
+package fr.dawan.project.jms;
+
+import javax.ejb.MessageDriven;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+
+@MessageDriven(mappedName = "jms/TestQueue")
+public class JMS20Consumer implements MessageListener {
+
+	@Override
+	public void onMessage(Message message) {
+		try {
+			
+
+			// In JMS 1.1:
+			ObjectMessage objectMessage = (ObjectMessage)message;
+			// BusinessObject payload =
+			// (BusinessObject)objectMessage.getObject();
+			//BusinessObject payload = message.getBody(BusinessObject.class);
+			System.out.println("JMS ==========> Message received: " + payload);
+		} catch (JMSException e) {
+			e.printStackTrace();
+			System.err.println("Error while fetching message payload: " + e.getMessage());
+		}
+	}
+}

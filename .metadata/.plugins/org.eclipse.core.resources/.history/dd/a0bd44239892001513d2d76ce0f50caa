@@ -1,0 +1,45 @@
+package fr.dawan.project.controlers;
+
+import java.io.IOException;
+
+import javax.enterprise.inject.Default;
+import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.CDI;
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import fr.dawan.project.injection.IsbnGenerator;
+
+
+@SuppressWarnings("serial")
+@WebServlet("/CDIControler")
+public class CDIControler extends HttpServlet {
+	
+	@Inject @Default
+	private IsbnGenerator numberGen;
+	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String isbn = numberGen.generateNumber();
+		response.getWriter().append("isbn => " + isbn);
+		
+		//on peut accéder au bean manager & manipuler des instances
+		//interface : BeanManager et CreationalContext<T>
+		BeanManager beanManager = CDI.current().getBeanManager();
+			
+		
+		
+	}
+
+
+
+
+}

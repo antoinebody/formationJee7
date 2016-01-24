@@ -1,0 +1,9 @@
+package fr.dawan.project.jpa;
+
+public enum PersistenceManager {
+	
+	MY_BASE("projJEE7");
+	
+	String persistenceUnit;
+
+}

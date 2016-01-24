@@ -1,0 +1,13 @@
+package fr.dawan.project.ejb;
+
+import javax.annotation.Resource;
+import javax.ejb.Stateless;
+import javax.enterprise.concurrent.ManagedExecutorService;
+
+@Stateless
+public class SerachEjb {
+	
+	@Resource
+	private ManagedExecutorService executorService;
+
+}

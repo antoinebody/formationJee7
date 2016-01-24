@@ -1,0 +1,8 @@
+package fr.dawan.project.jpa.heritage;
+
+import java.io.Serializable;
+
+
+public class CompteBancaire implements Serializable{
+
+}

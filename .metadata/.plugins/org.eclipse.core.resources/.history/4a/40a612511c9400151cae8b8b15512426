@@ -1,0 +1,12 @@
+package fr.dawan.projet1.client;
+
+import fr.dawan.projet1.ws.beans.CompagnieAerienne;
+
+public class ClientWS {
+	
+	public static void main(String[] args) {
+		CompagnieAerienne comp = new  CompagnieAerienne();
+		
+	}
+
+}

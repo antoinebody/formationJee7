@@ -1,0 +1,43 @@
+package fr.dawan.project.jpa;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public enum PersistenceManager {
+	
+
+	INSTANCE("projJEE7");
+
+	private String persistenceUnitName;
+	
+	private EntityManagerFactory emFactory;
+
+	private PersistenceManager(String persistenceUnitName) {
+		this.persistenceUnitName = persistenceUnitName;
+		// "jpa-example" was the value of the name attribute of the
+		// persistence-unit element.
+		emFactory = Persistence.createEntityManagerFactory("projJEE7");
+	}
+
+	public EntityManager getEntityManager() {
+		return emFactory.createEntityManager();
+	}
+
+	public void close() {
+		emFactory.close();
+	}
+
+	
+	/*
+	 Utilisation :
+	 
+	    EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
+    	em.getTransaction().begin();
+    	em.persist(address);
+    	em.getTransaction().commit();
+    	em.close();
+    	PersistenceManager.INSTANCE.close();
+	 */
+
+}

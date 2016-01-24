@@ -1,0 +1,17 @@
+package fr.dawan.project.jpa;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Id;
+
+
+public class Marque implements Serializable{
+	
+	@Id
+	private long id;
+	private String nomMarque;
+	
+	private List<Produit> produits;
+
+}

@@ -1,0 +1,22 @@
+package fr.dawan.project.jms;
+
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
+import javax.jms.JMSDestinationDefinition;
+import javax.jms.JMSDestinationDefinitions;
+
+@JMSDestinationDefinitions(
+		value={
+				@JMSDestinationDefinition(
+						)
+				
+				
+		}
+		)
+@Startup
+@Singleton
+public class JMSResourceCreator {
+	
+	
+
+}

@@ -1,0 +1,54 @@
+package fr.dawan.projet1.ws;
+
+import static org.junit.Assert.*;
+
+import java.util.Set;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import fr.dawan.projet1.ws.beans.CompagnieAerienne;
+
+public class CompagnieTest {
+	
+	private static ValidatorFactory vf;
+	private static Validator validator;
+	
+	private static CompagnieAerienne compagnieA;
+	
+	@BeforeClass
+	public static void setUpBeforeClass(){
+		vf = Validation.buildDefaultValidatorFactory();
+		validator = vf.getValidator();
+		
+		compagnieA = new CompagnieAerienne(0,null);
+		
+	}
+
+	@Test
+	public void test() {
+		System.out.println("launch test unit");
+		//indentifyViolations(compagnieA,0);
+		Set<ConstraintViolation<CompagnieAerienne>> violations = validator.validate(compagnieA);
+		
+		if(violations.isEmpty())
+			System.out.println("Aucune Violation");
+		else{
+			violations.forEach(v -> System.out.println(v.getMessage()));
+			fail(violations.size() + " errors");
+		}
+		
+		
+	}
+
+	private void indentifyViolations(CompagnieAerienne compagnieA2, int i) {
+
+		
+	}
+
+}

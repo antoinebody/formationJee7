@@ -1,0 +1,4 @@
+package fr.dawan.peer;
+class AppConfigurator extends Configurator{
+	
+}

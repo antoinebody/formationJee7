@@ -1,0 +1,7 @@
+package fr.dawan.peer;
+
+import javax.websocket.ClientEndpointConfig.Configurator;
+
+class AppConfigurator extends Configurator{
+	
+}

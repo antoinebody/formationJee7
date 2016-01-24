@@ -1,0 +1,38 @@
+package fr.dawan.project.ejb.timer;
+
+import java.util.Properties;
+
+import javax.annotation.PostConstruct;
+import javax.batch.operations.JobOperator;
+import javax.batch.runtime.BatchRuntime;
+import javax.batch.runtime.BatchStatus;
+import javax.batch.runtime.JobExecution;
+import javax.ejb.LocalBean;
+import javax.ejb.Schedule;
+import javax.ejb.Stateless;
+import javax.ejb.Timer;
+
+//par défaut local
+@Stateless
+@LocalBean
+public class BatchScheduleEjb {
+	
+	@PostConstruct
+	private void postConstruct(){
+		System.out.println("********* Post construct");
+	}
+
+   
+	//tous les jours à 9h55
+	@Schedule(hour="10",minute="10")
+    private void launchJob(final Timer t) {
+		System.out.println("------- In ejb timer BatchScheduleEjb");
+		JobOperator jobOperator = BatchRuntime.getJobOperator();
+		long executionId = jobOperator.start("myJob", new Properties());
+		JobExecution jobExec = jobOperator.getJobExecution(executionId);
+		BatchStatus batchStatus = jobExec.getBatchStatus();
+		System.out.println("batch status " + batchStatus);
+		
+    }
+	
+}

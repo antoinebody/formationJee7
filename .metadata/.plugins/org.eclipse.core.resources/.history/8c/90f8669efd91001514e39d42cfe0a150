@@ -1,0 +1,22 @@
+package fr.dawan.websocket;
+
+import javax.websocket.Encoder;
+import javax.websocket.EndpointConfig;
+
+import fr.dawan.websocket.beans.Person;
+
+public class PersonEncoder implements Encoder.Text<Person> {
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void init(EndpointConfig config) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

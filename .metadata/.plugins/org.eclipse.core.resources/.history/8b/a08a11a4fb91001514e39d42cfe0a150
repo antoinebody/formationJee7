@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Projet Jee7</title>
+	<script src="js/websocket.js"></script>
+</head>
+<body>
+	<h3>WebSocket</h3>
+	<button onclick="sendMessage();">Envoyer message</button>
+	<br/>
+	<div id="res"></div>
+	
+</body>
+</html>

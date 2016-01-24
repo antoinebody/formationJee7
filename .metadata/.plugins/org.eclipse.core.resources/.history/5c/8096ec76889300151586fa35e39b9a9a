@@ -1,0 +1,63 @@
+package fr.dawan.projet1.ws;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.GenericEntity;
+import javax.ws.rs.core.MediaType;
+
+import fr.dawan.projet1.dao.VoyageDao;
+import fr.dawan.projet1.ws.beans.Voyage;
+
+@Path("voyages")
+public class VoyageWS {
+	
+	
+	private static SimpleDateFormat SDF = new SimpleDateFormat("dd-MM-yyyy");
+
+	@GET
+	@Path("/{id}")
+	@Produces({ MediaType.TEXT_XML, MediaType.APPLICATION_XML })
+	// @Produces({MediaType.APPLICATION_JSON})
+	public Voyage getVoyage(@PathParam("id") long id) {
+		Voyage voyage = VoyageDao.lister().get((int) id);
+		return voyage;
+	}
+
+	// afin de faciliter la gestion des types génértiques, ils ont crée la
+	// classe
+	// GenericEntity : wrapper de types génériques
+	//
+
+	@GET
+	@Produces({ MediaType.TEXT_XML, MediaType.APPLICATION_XML })
+	// @Produces({MediaType.APPLICATION_JSON})
+	public GenericEntity<List<Voyage>> getVoyages() {
+		List<Voyage> list = VoyageDao.lister();
+		GenericEntity<List<Voyage>> res = new GenericEntity<List<Voyage>>(list) {
+		};
+		return res;
+	}
+
+	@Path("add")
+	@GET
+	@Produces({ MediaType.TEXT_XML, MediaType.APPLICATION_XML })
+	// @Produces({MediaType.APPLICATION_JSON})
+	public Voyage getVoyages(@QueryParam("ville_depart") String villeDepart,
+			@QueryParam("villeArrivee") String villeArrivee, @QueryParam("datedepart") String datedepart) {
+		Voyage voyage = new Voyage();
+		voyage.setVilleDepart(villeDepart);
+		voyage.setVilleArrivee(villeArrivee);
+		voyage.setDatedepart(SDF.parse(datedepart));
+		VoyageDao.ajouter(voyage);
+		
+		return res;
+	}
+
+}

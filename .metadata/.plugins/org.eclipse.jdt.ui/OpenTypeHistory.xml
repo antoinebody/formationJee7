@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=ProjWebsocketClient/C:\/Formation\/glassfish4\/glassfish\/modules\/javax.servlet-api.jar&lt;javax.servlet.http(HttpServlet.class[HttpServlet" modifiers="1057" timestamp="1442660782000"/>
+<typeInfo handle="=ProjWebsocket/C:\/Program Files\/Java\/jdk1.8.0_65\/jre\/lib\/rt.jar&lt;java.lang(NullPointerException.class[NullPointerException" modifiers="33" timestamp="1448270231604"/>
+<typeInfo handle="=ProjJEE7/C:\/Formation\/glassfish4\/glassfish\/modules\/javax.batch-api.jar&lt;javax.batch.api.chunk(ItemReader.class[ItemReader" modifiers="1537" timestamp="1442660784000"/>
+<typeInfo handle="=ProjJEE7/C:\/Formation\/glassfish4\/glassfish\/modules\/javax.batch-api.jar&lt;javax.batch.api.chunk(ItemProcessor.class[ItemProcessor" modifiers="1537" timestamp="1442660784000"/>
+<typeInfo handle="=ProjJEE7/C:\/Formation\/glassfish4\/glassfish\/modules\/javax.batch-api.jar&lt;javax.batch.api.chunk(ItemWriter.class[ItemWriter" modifiers="1537" timestamp="1442660784000"/>
+<typeInfo handle="=projetRS/src&lt;fr.dawan.projet1.ws{MyApplication.java[MyApplication" modifiers="1" timestamp="1448552146971"/>
+<typeInfo handle="=projetRS/src&lt;fr.dawan.projet1.ws{VoyageWS.java[VoyageWS" modifiers="1" timestamp="1448533467231"/>
+<typeInfo handle="=projetRS/src&lt;fr.dawan.projet1.ws{CompagnieWS.java[CompagnieWS" modifiers="1" timestamp="1448552117587"/>
+<typeInfo handle="=projetRS/C:\/Formation\/glassfish4\/glassfish\/modules\/javax.ws.rs-api.jar&lt;javax.ws.rs.container(ContainerRequestFilter.class[ContainerRequestFilter" modifiers="1537" timestamp="1442660780000"/>
+<typeInfo handle="=projetRS/C:\/Formation\/glassfish4\/glassfish\/modules\/javax.ws.rs-api.jar&lt;javax.ws.rs.client(ClientRequestFilter.class[ClientRequestFilter" modifiers="1537" timestamp="1442660780000"/>
+<typeInfo handle="=projetRS/C:\/Formation\/glassfish4\/glassfish\/modules\/javax.ws.rs-api.jar&lt;javax.ws.rs.ext(ExceptionMapper.class[ExceptionMapper" modifiers="1537" timestamp="1442660780000"/>
+<typeInfo handle="=projetRS/C:\/Formation\/glassfish4\/glassfish\/modules\/javax.ws.rs-api.jar&lt;javax.ws.rs.ext(ReaderInterceptor.class[ReaderInterceptor" modifiers="1537" timestamp="1442660780000"/>
+<typeInfo handle="=ProjJEE7/src&lt;fr.dawan.project.ejb.timer{BatchScheduleEjb.java[BatchScheduleEjb" modifiers="1" timestamp="1448618948435"/>
+<typeInfo handle="=ProjJEE7/src&lt;fr.dawan.project.jpa{Produit.java[Produit" modifiers="1" timestamp="1448636219486"/>
+</typeInfoHistroy>

@@ -1,0 +1,15 @@
+package fr.dawan.project.ejb;
+
+public class ResultatRecherche {
+	
+	private int line;
+	public ResultatRecherche(int line, String fileName, String lineContent) {
+		super();
+		this.line = line;
+		this.fileName = fileName;
+		this.lineContent = lineContent;
+	}
+	private String fileName;
+	private String lineContent;
+
+}

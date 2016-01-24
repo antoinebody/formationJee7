@@ -1,0 +1,15 @@
+package fr.dawan.project.jpa;
+
+import java.io.Serializable;
+
+import javax.persistence.Id;
+
+
+public class Marque implements Serializable{
+	
+	@Id
+	private long id;
+	private String nomMarque;
+	
+
+}

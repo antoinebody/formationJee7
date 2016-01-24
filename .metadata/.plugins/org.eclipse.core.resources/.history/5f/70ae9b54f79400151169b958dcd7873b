@@ -1,0 +1,8 @@
+package fr.dawan.project.jpa;
+
+public class Fournisseur {
+	
+	private long id;
+	private String name;
+
+}

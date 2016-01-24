@@ -1,0 +1,32 @@
+package fr.dawan.rs.client;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
+import javax.management.RuntimeErrorException;
+import javax.ws.rs.core.MediaType;
+
+public class RSHttpClient {
+	
+	public static void main(String[] args) throws Exception {
+		URL url = new URL("http://localhost:8080/projetRS/rest/compagnies/1");
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestMethod("GET");
+		conn.setRequestProperty("Accept", MediaType.APPLICATION_JSON);
+		if(conn.getResponseCode()!=200)
+			throw new RuntimeException("failed htpp " + conn.getResponseCode());
+		Scanner scan = new Scanner(conn.getInputStream());
+		while(scan.hasNextLine()){
+			System.out.println(scan.nextLine());
+		}
+		
+		scan.close();
+			
+			
+		// Send post request
+		//conn.setDoOutput(true);
+
+	}
+
+}

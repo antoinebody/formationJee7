@@ -1,0 +1,22 @@
+package fr.dawan.projet1.client;
+
+import fr.dawan.projet1.ws.beans.CompagnieAerienne;
+
+public class ClientWS {
+	
+	public static void main(String[] args) {
+		CompagnieAerienne comp = new  CompagnieAerienne(5L,"look voyage");
+		
+		Client client = Client.create();
+
+		WebResource webResource = client
+				   .resource("http://localhost:8080/RESTfulExample/rest/json/metallica/post");
+
+				String input = "{\"singer\":\"Metallica\",\"title\":\"Fade To Black\"}";
+
+				ClientResponse response = webResource.type("application/json")
+				   .post(ClientResponse.class, input);
+
+	}
+
+}

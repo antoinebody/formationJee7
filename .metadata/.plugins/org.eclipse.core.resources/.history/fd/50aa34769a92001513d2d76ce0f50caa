@@ -1,0 +1,14 @@
+package fr.dawan.project.injection;
+
+/**
+ * les interceptor de cdi permettent d efectuer des actions avant et apres les
+ * appels de méthodes & de constructeurs
+ * 
+ * 3 etapes :
+ *   - definir un @InterceptorBinding
+ *   - definir l'intercepteur
+ *   - activer l'intercepteur : soit dans beanx.xml ou @Priority
+ */
+public class IsbnInterceptor {
+
+}

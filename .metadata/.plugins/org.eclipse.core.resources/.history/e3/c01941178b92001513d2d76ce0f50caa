@@ -1,0 +1,24 @@
+package fr.dawan.peer;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.websocket.ClientEndpointConfig.Configurator;
+import javax.websocket.HandshakeResponse;
+
+public class AppConfigurator extends Configurator{
+
+	@Override
+	public void afterResponse(HandshakeResponse hr) {
+		super.afterResponse(hr);
+	}
+
+	@Override
+	public void beforeRequest(Map<String, List<String>> headers) {
+		for (iterable_type iterable_element : iterable) {
+			
+		}
+		super.beforeRequest(headers);
+	}
+	
+}

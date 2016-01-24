@@ -1,0 +1,8 @@
+package fr.dawan.project.jpa;
+
+public class ReferenceProduit {
+	
+	private long id;
+	private Produit;
+
+}

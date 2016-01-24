@@ -1,0 +1,30 @@
+1448361132245	Copy compilation unit
+1448362568801	Copy compilation unit
+1448370342721	Copy compilation unit
+1448370347727	Rename type 'JSONServlet2'
+1448372517429	Rename type 'SerachEjb'
+1448372797610	Copy compilation unit
+1448373338309	Rename resource 'resultatRecherche.jsp'
+1448379307923	Copy compilation unit
+1448380122716	Copy compilation unit
+1448440796142	Move compilation unit
+1448440810276	Move compilation units
+1448442209154	Rename package 'fr.dawan.project.ejb.modeld'
+1448444303502	Copy file
+1448444326694	Copy compilation unit
+1448444476680	Copy compilation unit
+1448458124422	Rename resource 'produit.xml'
+1448458578818	Copy file
+1448526796328	Copy file
+1448534552160	Copy compilation unit
+1448553367227	Rename local variable 'payload'
+1448629898009	Copy compilation unit
+1448630096972	Copy package
+1448630131953	Rename type 'CompteBancaire'
+1448630137195	Rename type 'CompteEpargne'
+1448630170546	Rename compilation unit 'CompteBancaire.java'
+1448630173323	Rename compilation unit 'CompteEpargne.java'
+1448630291230	Copy compilation units
+1448630298269	Rename compilation unit 'CompteBancaireS.java'
+1448630306787	Rename type 'CompteEpargneS'
+1448633015843	Rename enum constant 'INSTANCE'

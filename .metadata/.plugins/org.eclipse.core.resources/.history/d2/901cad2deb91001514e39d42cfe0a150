@@ -1,0 +1,8 @@
+package fr.dawan.project.controlers;
+
+import javax.ws.rs.Path;
+
+@Path("rest")
+public class RestTest {
+
+}

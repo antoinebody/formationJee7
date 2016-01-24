@@ -1,0 +1,6 @@
+package fr.dawan.project.jms;
+
+
+public class JMSResourceCreator {
+
+}

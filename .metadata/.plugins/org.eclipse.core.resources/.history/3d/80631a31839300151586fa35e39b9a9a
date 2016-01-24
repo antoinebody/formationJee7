@@ -1,0 +1,73 @@
+package fr.dawan.projet1.ws.beans;
+
+import java.util.Date;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="voyage")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Voyage {
+
+	@XmlAttribute(name="voyage_id")
+	protected long id;
+	@XmlElement(name="ville_depart")
+	protected String villeDepart;
+	@XmlElement
+	protected String villeArrivee;
+	@XmlElement
+	protected Date datedepart;
+	
+	public Voyage() {
+	}
+
+	public Voyage(long id, String villeDepart, String villeArrivee, Date datedepart) {
+		this.id = id;
+		this.villeDepart = villeDepart;
+		this.villeArrivee = villeArrivee;
+		this.datedepart = datedepart;
+	}
+
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getVilleDepart() {
+		return villeDepart;
+	}
+
+	public void setVilleDepart(String villeDepart) {
+		this.villeDepart = villeDepart;
+	}
+
+	public String getVilleArrivee() {
+		return villeArrivee;
+	}
+
+	public void setVilleArrivee(String villeArrivee) {
+		this.villeArrivee = villeArrivee;
+	}
+
+	public Date getDatedepart() {
+		return datedepart;
+	}
+
+	public void setDatedepart(Date datedepart) {
+		this.datedepart = datedepart;
+	}
+
+	@Override
+	public String toString() {
+		return "Voyage [id=" + id + ", villeDepart=" + villeDepart + ", villeArrivee=" + villeArrivee + ", datedepart="
+				+ datedepart + "]";
+	}
+
+}

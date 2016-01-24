@@ -1,0 +1,10 @@
+package fr.dawan.websocket;
+
+import javax.websocket.Encoder;
+import javax.websocket.EndpointConfig;
+
+import fr.dawan.websocket.beans.Person;
+
+public class PersonEncoder implements Encoder.Text<Person> {
+
+}

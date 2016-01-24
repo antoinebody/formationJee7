@@ -1,0 +1,70 @@
+package fr.dawan.rs.client.controller;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.core.MediaType;
+
+/**
+ * Servlet implementation class JavaClientControler
+ */
+@WebServlet("/JavaClientControler")
+public class JavaClientControler extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String exemple = request.getParameter("exemple");
+		switch (exemple) {
+		case "1":
+			getXml(response,"http://localhost:8080/projetRS/rest/voyages",MediaType.APPLICATION_JSON);
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void getXml(HttpServletResponse response, String urlStr, String mimeType) {
+		URL url;
+		try {
+
+			url = new URL(urlStr);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept",mimeType );
+			if(conn.getResponseCode()!=200)
+				throw new RuntimeException("failed htpp " + conn.getResponseCode());
+			Scanner scan = new Scanner(new BufferedInputStream(conn.getInputStream()));
+			StringBuffer sb = new StringBuffer();
+			while(scan.hasNextLine()){
+				sb.append(scan.nextLine());
+				//System.out.println(scan.nextLine());
+			}
+			scan.close();
+			response.getWriter().write(sb.toString());
+			
+		} catch (IOException e) {
+			try {
+				e.printStackTrace(response.getWriter());
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			
+		} 
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package fr.dawan.project.injection;
+
+/**
+ *
+ */
+public class IsbnInterceptor {
+
+}

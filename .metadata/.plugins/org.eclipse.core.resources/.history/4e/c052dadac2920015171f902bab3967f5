@@ -1,0 +1,22 @@
+package fr.dawan.project.batch;
+
+import javax.batch.api.listener.JobListener;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+@Named
+@RequestScoped
+public class MyStepListener implements JobListener{
+
+	@Override
+	public void afterJob() throws Exception {
+		System.out.println("MyJobListener::afterJob");
+		
+	}
+
+	@Override
+	public void beforeJob() throws Exception {
+		System.out.println("MyJobListener::beforeJob");		
+	}
+
+}

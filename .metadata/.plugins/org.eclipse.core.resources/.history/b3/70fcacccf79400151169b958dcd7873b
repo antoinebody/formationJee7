@@ -1,0 +1,37 @@
+package fr.dawan.project.jpa;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@SuppressWarnings("serial")
+@Entity
+public class Fournisseur implements Serializable
+{
+
+	@Id
+	private long id;
+	private String name;
+	
+	@ManyToMany
+	private List<Produit> produits;
+	
+	
+	public Fournisseur() {
+		super();
+	}
+
+	public Fournisseur(long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.produits = new ArrayList<>();
+	}
+
+	
+
+}

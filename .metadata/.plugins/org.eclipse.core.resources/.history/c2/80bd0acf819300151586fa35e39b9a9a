@@ -1,0 +1,12 @@
+package fr.dawan.projet1.ws.beans;
+
+import java.util.Date;
+
+public class Voyage {
+
+	protected long id;
+	protected String villeDepart;
+	protected String villeArrivee;
+	protected Date datedepart;
+
+}

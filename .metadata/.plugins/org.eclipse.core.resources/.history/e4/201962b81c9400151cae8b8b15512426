@@ -1,0 +1,12 @@
+package fr.dawan.projet1.client;
+
+
+
+import javax.ws.rs.client.Client;
+
+import org.glassfish.jersey.client.ClientResponse;
+
+import fr.dawan.projet1.ws.beans.CompagnieAerienne;
+
+
+}

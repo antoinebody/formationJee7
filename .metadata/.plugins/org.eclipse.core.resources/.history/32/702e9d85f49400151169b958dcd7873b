@@ -1,0 +1,9 @@
+package fr.dawan.project.jpa;
+
+import java.util.UUID;
+
+public enum EtatProduit {
+	
+	NEUF,OCCASION;
+	
+	}

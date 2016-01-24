@@ -1,0 +1,25 @@
+package fr.dawan.project.injection;
+
+import javax.annotation.Priority;
+import javax.interceptor.Interceptor;
+import javax.interceptor.InvocationContext;
+
+/**
+ * les interceptor de cdi permettent d efectuer des actions avant et apres les
+ * appels de méthodes & de constructeurs
+ * 
+ * 3 etapes :
+ *   - definir un @InterceptorBinding
+ *   - definir l'intercepteur : doit avoir une méthode annotée @AroundInvoke
+ *   - activer l'intercepteur : soit dans beanx.xml ou @Priority
+ */
+@Interceptor
+@Audited // InterceptorBinfin :
+         // annotation maison qui décore les objets à intercepter
+		 // intercept tous les objets qui ont l'annotation @Audited
+@Priority(value=1)
+public class IsbnInterceptor {
+	
+	public Object audit(InvocationContext context) throws Exception []
+
+}

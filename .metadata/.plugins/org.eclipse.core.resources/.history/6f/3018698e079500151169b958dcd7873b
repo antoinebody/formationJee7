@@ -1,0 +1,13 @@
+package fr.dawan.project.jpa.heritage;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+@Entity
+public class CompteBancaire implements Serializable{
+	
+	private id;
+	private double montannt:
+
+}

@@ -1,0 +1,3 @@
+class AppConfigurator extends Configurator{
+	
+}

@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Appel de WS Rest</title>
+</head>
+<body>
+
+	<h3>Appel de WS Rest</h3>
+	<a href="JavaClientControler?exemple=1">Appel Java</a>
+	<br/>
+	<a href="JerseyClientController?exemple=1">Appel Jersey</a>
+	
+
+</body>
+</html>

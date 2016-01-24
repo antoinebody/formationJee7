@@ -1,0 +1,19 @@
+package fr.dawan.projet1.ws.beans;
+
+public class CompagnieAerienne {
+	
+	private long id;
+	private String nom;
+	public CompagnieAerienne(long id, String nom) {
+		super();
+		this.id = id;
+		this.nom = nom;
+	}
+	public CompagnieAerienne() {
+		super();
+	}
+	
+	
+	
+
+}

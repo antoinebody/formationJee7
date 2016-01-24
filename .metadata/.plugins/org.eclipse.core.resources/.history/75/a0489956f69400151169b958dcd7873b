@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	
+	<!--  RESOURCE local quand acces avec user/pwd etc..
+		mettre JTA quand on fait les connexions via les datasources
+	 -->
+	<persistence-unit name="ProjJEE7" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!-- <provider>org.hibernate.ejb.HibernatePersistence</provider> -->
+
+		<!-- <jta-data-source>jdbc/formation</jta-data-source> -->
+ 		<class>fr.dawan.project.jpa.Produit</class>
+ 		<class>fr.dawan.project.jpa.Marque</class>
+ 		
+		<!-- <jar-file>toutes les classes dans un .jar</jar-file> -->
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bddformation" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+
+			<property name="javax.persistence.schema-generation.database.action"
+				value="create" />
+			<!-- <property name="javax.persistence.schema-generation.scripts.action" 
+				value="drop-and-create"/> <property name="javax.persistence.schema-generation.scripts.drop-target" 
+				value="/tmp/mydrop.ddl"/> <property name="javax.persistence.schema-generation.scripts.create-target" 
+				value="/tmp/mycreate.ddl"/> -->
+
+
+
+
+		</properties>
+	</persistence-unit>
+</persistence>

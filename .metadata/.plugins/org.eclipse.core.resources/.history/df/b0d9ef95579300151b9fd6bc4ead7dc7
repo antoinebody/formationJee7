@@ -1,0 +1,13 @@
+package fr.dawan.project.batch.chunk;
+
+import javax.batch.api.chunk.ItemProcessor;
+
+public class MyItemProcessor implements ItemProcessor {
+
+	@Override
+	public Object processItem(Object item) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

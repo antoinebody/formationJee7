@@ -1,0 +1,62 @@
+package fr.dawan.project.jpa;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@SuppressWarnings("serial")
+@Entity
+public class Marque implements Serializable{
+	
+	@Id
+	private long id;
+	private String nomMarque;
+	
+	//on indique le nome de l'attribut java qui match dans l autre classe
+	@OneToMany(mappedBy="marque")
+	private List<Produit> produits;
+	
+	public Marque() {
+		super();
+	}
+
+	public Marque(long id, String nomMarque) {
+		super();
+		this.id = id;
+		this.nomMarque = nomMarque;
+		this.produits = new ArrayList<>();
+	}
+
+	
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNomMarque() {
+		return nomMarque;
+	}
+
+	public void setNomMarque(String nomMarque) {
+		this.nomMarque = nomMarque;
+	}
+
+	public List<Produit> getProduits() {
+		return produits;
+	}
+
+	public void setProduits(List<Produit> produits) {
+		this.produits = produits;
+	}
+	
+	
+
+}

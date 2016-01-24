@@ -1,0 +1,4 @@
+public class Severity {
+    public static class Info extends Payload {};
+    public static class Error extends Payload {};
+}

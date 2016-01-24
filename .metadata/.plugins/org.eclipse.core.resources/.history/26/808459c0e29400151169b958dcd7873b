@@ -1,0 +1,10 @@
+package fr.dawan.project.jms;
+
+import javax.ejb.Startup;
+
+@Startup
+public class JMSResourceCreator {
+	
+	
+
+}

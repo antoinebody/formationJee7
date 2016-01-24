@@ -1,0 +1,7 @@
+package fr.dawan.projet1.ws.beans;
+
+public class Voyage {
+	
+	private long id;
+
+}

@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+var webSocket = new WebSocket("ws://localhost:8080/ProjWebsocket/actions/toto");
+
+function sendMessage() {
+
+}

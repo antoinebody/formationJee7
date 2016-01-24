@@ -1,0 +1,34 @@
+@Stateless
+public class JMS20Producer {
+
+
+	@Resource(lookup = "jms/TestQueue")
+	private Queue queue;
+
+	
+	@Inject
+	@JMSConnectionFactory("jms/__defaultConnectionFactory") //@JMSConnectionFactory("java:comp/DefaultJMSConnectionFactory")
+	private JMSContext jmsContext;
+
+	public String send(BusinessObject objToSend) {
+		try {
+
+			System.out.println("produce JMS ============>");
+			JMSProducer jmsProducer = jmsContext.createProducer();
+			
+			jmsProducer.send(queue, objToSend);
+			
+			
+			
+			//Set delivery delay of 20 seconds, in milliseconds. This will apply to all messages sent from this producer until the value is changed.
+			jmsProducer.setDeliveryDelay(20 * 1000);
+			jmsProducer.send(queue, new BusinessObject("titi 2nd Object"));
+			
+			
+			return "OK";	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "KO";
+	}
+}

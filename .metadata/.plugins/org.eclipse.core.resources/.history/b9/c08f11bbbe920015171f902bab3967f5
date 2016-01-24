@@ -1,0 +1,11 @@
+package fr.dawan.project.batch;
+
+import javax.batch.api.AbstractBatchlet;
+
+/**
+ *Execution d'une step d'une job Batch 
+ *
+ */
+public class MyBatchlet extends AbstractBatchlet {
+
+}

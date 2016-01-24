@@ -1,0 +1,39 @@
+package fr.dawan.project.ejb.timer;
+
+import java.util.Properties;
+
+import javax.batch.operations.JobOperator;
+import javax.batch.runtime.BatchRuntime;
+import javax.batch.runtime.BatchStatus;
+import javax.batch.runtime.JobExecution;
+import javax.ejb.Schedule;
+import javax.ejb.Stateless;
+import javax.ejb.Timer;
+
+@Stateless
+public class BatchScheduleEjb {
+
+    /**
+     * Default constructor. 
+     */
+    public BatchScheduleEjb() {
+        // TODO Auto-generated constructor stub
+    }
+	
+	//tous les jours à 9h55
+	@Schedule(hour="9",minute="55")
+    private void scheduledTimeout(final Timer t) {
+		JobOperator jobOperator = BatchRuntime.getJobOperator();
+		long executionId = jobOperator.start("myJob", new Properties());
+		JobExecution jobExec = jobOperator.getJobExecution(executionId);
+		BatchStatus batchStatus = jobExec.getBatchStatus();
+		System.out.println("batch status " + batchStatus);
+		
+    }
+	
+	
+	
+	
+	
+	
+}

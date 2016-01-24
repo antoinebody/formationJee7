@@ -1,0 +1,9 @@
+package fr.dawan.peer;
+
+public class WebsocketPeer {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

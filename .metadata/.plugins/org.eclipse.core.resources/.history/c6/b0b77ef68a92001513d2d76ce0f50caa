@@ -1,0 +1,19 @@
+package fr.dawan.peer;
+
+import javax.websocket.ClientEndpoint;
+import javax.websocket.ClientEndpointConfig.Configurator;
+
+import fr.dawan.tools.PersonDecoder;
+import fr.dawan.tools.PersonEncoder;
+
+@ClientEndpoint(decoders={PersonDecoder.class},encoders={PersonEncoder.class},
+configurator=AppConfigurator.class)
+public class WebsocketPeer {
+	
+	
+
+}
+
+private class AppConfigurator extends Configurator{
+	
+}

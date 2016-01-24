@@ -1,0 +1,8 @@
+package fr.dawan.project.ejb;
+
+import javax.ejb.Stateless;
+
+@Stateless
+public class SerachEjb {
+
+}

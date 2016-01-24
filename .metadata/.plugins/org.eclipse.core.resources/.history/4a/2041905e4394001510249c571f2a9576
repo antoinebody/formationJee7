@@ -1,0 +1,7 @@
+package fr.dawan.projet1.ws;
+
+import javax.ws.rs.ext.WriterInterceptor;
+
+public class MyWriterInterceptor implements WriterInterceptor{
+
+}

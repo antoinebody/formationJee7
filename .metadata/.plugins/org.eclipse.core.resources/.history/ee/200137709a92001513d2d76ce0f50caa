@@ -1,0 +1,9 @@
+package fr.dawan.project.injection;
+
+/**
+ * les interceptor de cdi permettent d efectuer des actions avant et apres les
+ * appels de méthodes & de constructeurs
+ */
+public class IsbnInterceptor {
+
+}

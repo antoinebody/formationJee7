@@ -1,0 +1,9 @@
+package fr.dawan.rs.client;
+
+public class RSHttpClient {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+
+if(!window.WebSocket)
+	throw new Error("WebSocket non supported")
+else
+	console.log("ws protocol supported")
+var webSocket = new WebSocket("ws://localhost:8080/ProjWebsocket/actions/myParameter");
+
+webSocket.onmessage = receivedMessage;
+
+function sendMessage() {
+	//simple String
+	webSocket.send("hello from client");
+	//JSON Object
+	
+}
+
+function receivedMessage() {
+
+}

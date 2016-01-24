@@ -1,0 +1,82 @@
+package fr.dawan.project.controlers;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.UUID;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import fr.dawan.project.jpa.EtatProduit;
+import fr.dawan.project.jpa.Fournisseur;
+import fr.dawan.project.jpa.Marque;
+import fr.dawan.project.jpa.PersistenceManager;
+import fr.dawan.project.jpa.Produit;
+import fr.dawan.project.jpa.ReferenceProduit;
+import fr.dawan.project.jpa.dao.MarqueDao;
+
+/**
+ * Servlet implementation class JPAController
+ */
+@WebServlet("/JPAController")
+public class JPAController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	@Inject
+	private MarqueDao marqueDao;
+	// private EntityManager em;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			EntityManager em = PersistenceManager.MY_BASE.getEntityManager();
+			EntityTransaction tx = em.getTransaction();
+			tx.begin();
+			System.out.println("Table crée");
+			Produit produit = new Produit(0, "Ordinateur_" + UUID.randomUUID().toString(), new Date(),
+					EtatProduit.NEUF);
+			produit.getComposants().addAll(Arrays.asList("processeur", "ram", "gtx970"));
+
+			Marque marque = new Marque(0, "dell" + UUID.randomUUID());
+			marque.getProduits().add(produit);
+			produit.setMarque(marque);
+
+			Fournisseur fournisseur = new Fournisseur(0, "carrouf");
+			fournisseur.getProduits().add(produit);
+			produit.getFournisseurs().add(fournisseur);
+
+			fournisseur = new Fournisseur(0, "darty");
+			fournisseur.getProduits().add(produit);
+			produit.getFournisseurs().add(fournisseur);
+
+			ReferenceProduit referenceProduit = new ReferenceProduit(0, "ref_produit_generique", produit);
+			produit.setReference(referenceProduit);
+			em.persist(produit);
+			tx.commit();
+			em.clear();
+			
+			System.out.println("_______ Passage par le DAO");
+			Marque rechercher = marqueDao.rechercher(0);
+			System.out.println("recherche id 0 " + rechercher);
+			rechercher.setNomMarque("C'est plus un dell");
+			
+			
+			
+			response.getWriter().append("Produit:	// ").append(request.getContextPath());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

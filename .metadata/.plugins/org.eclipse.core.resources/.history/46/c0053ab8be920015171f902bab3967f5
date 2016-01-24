@@ -1,0 +1,9 @@
+package fr.dawan.project.batch;
+
+/**
+ *Execution d'une step d'une job Batch 
+ *
+ */
+public class MyBatchlet {
+
+}

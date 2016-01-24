@@ -1,0 +1,48 @@
+package fr.dawan.project.jms;
+
+import javax.annotation.Resource;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
+import javax.enterprise.inject.Produces;
+import javax.jms.JMSDestinationDefinition;
+import javax.jms.JMSDestinationDefinitions;
+import javax.jms.Queue;
+
+/*
+ *possibilité dans @JMSDestinationDefinition d'utiliser des proprties spécifiques pour paramétrer des éléments en fonction du provider  
+ * 
+ */
+@JMSDestinationDefinitions(value = {
+		@JMSDestinationDefinition(name = "jms/demoQueue", interfaceName = "javax.jms.Queue", destinationName = "demoQueue"),
+		@JMSDestinationDefinition(name = "jms/demoTopic", interfaceName = "javax.jms.Topic", destinationName = "demoTopic") })
+@Startup
+@Singleton
+public class JMSResourceCreator {
+	
+	//code dessous si on veut depuis une autre class injecter la queue
+	
+	/**
+	 * 1ere solution : sans le code si dessous
+	 * 
+	 * Pour l'appel d'un client :
+	 * 
+	 * @Resource(lookup = "jms/TestQueue")
+	 * private Queue queue;
+	 * _____________________________________________________
+	 * 
+	 * 2eme solution avec le code ci-dessous:
+	 * 
+	 * @Inject
+	 * JMSResourceCreaor jmsResCreator
+	 * 
+	 */
+	
+	@Resource(mappedName="jms/demoQueue")
+	private Queue queue;
+	
+	@Produces
+	public Queue getQueue(){
+		return this.queue;
+	}
+
+}

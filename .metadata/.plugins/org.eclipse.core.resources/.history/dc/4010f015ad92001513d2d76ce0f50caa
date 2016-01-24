@@ -1,0 +1,42 @@
+package fr.dawan.project.controlers;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import javax.annotation.Resource;
+import javax.enterprise.concurrent.ManagedScheduledExecutorService;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class JSONServlet
+ */
+@SuppressWarnings("serial")
+@WebServlet("/JSONController")
+public class ConcurrentController extends HttpServlet {
+
+	// la ressource de gestion de la concurrence récupérée depuis le server
+	@Resource(name = "concurrent/__defaultManagedScheduledExecutorService")
+	private ManagedScheduledExecutorService executorService;
+
+	@Override
+	public void init() throws ServletException {
+		executorService.scheduleWithFixedDelay(new Runnable() {
+
+			@Override
+			public void run() {
+				System.out.println("Hello .......................");
+
+			}
+
+		}, 0, 3, TimeUnit.SECONDS);
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+	}
+
+}

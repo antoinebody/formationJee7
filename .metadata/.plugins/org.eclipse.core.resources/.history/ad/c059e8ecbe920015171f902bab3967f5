@@ -1,0 +1,25 @@
+package fr.dawan.project.batch;
+
+import javax.batch.api.AbstractBatchlet;
+
+/**
+ *Execution d'une step d'une job Batch 
+ *
+ */
+public class MyBatchlet extends AbstractBatchlet {
+
+	@Override
+	public String process() throws Exception {
+		System.out.println("Stop MyBatchlet");
+		
+		return null;
+	}
+
+	@Override
+	public void stop() throws Exception {
+		// TODO Auto-generated method stub
+		super.stop();
+	}
+	
+
+}

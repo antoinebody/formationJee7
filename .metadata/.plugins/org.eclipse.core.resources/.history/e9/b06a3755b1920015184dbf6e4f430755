@@ -1,0 +1,9 @@
+package fr.dawan.project.ejb;
+
+public class ResultatRecherche {
+	
+	private int line;
+	private String fileName;
+	private String lineContent;
+
+}

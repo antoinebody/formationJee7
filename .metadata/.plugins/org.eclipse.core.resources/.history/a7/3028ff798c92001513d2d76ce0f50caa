@@ -1,0 +1,7 @@
+package fr.dawan;
+
+import javax.servlet.http.HttpServlet;
+
+public class ClientWebSocketServlet extends HttpServlet {
+
+}

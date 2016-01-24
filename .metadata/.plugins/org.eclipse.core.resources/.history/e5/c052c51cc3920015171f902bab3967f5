@@ -1,0 +1,26 @@
+package fr.dawan.project.batch;
+
+import javax.batch.api.listener.StepListener;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+
+@Named
+@RequestScoped
+public class MyStepListener implements StepListener {
+	
+	private StepContext s
+
+	@Override
+	public void afterStep() throws Exception {
+		System.out.println("MyStepListener::afterStep");
+		
+	}
+
+	@Override
+	public void beforeStep() throws Exception {
+		System.out.println("MyStepListener::beforeStep");
+		
+	}
+
+}

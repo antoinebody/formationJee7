@@ -1,0 +1,10 @@
+package fr.dawan.project.injection;
+
+/**
+ * 
+ * @author Admin Stagiaire
+ *
+ */
+public class IsbnInterceptor {
+
+}

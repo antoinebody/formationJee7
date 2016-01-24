@@ -1,0 +1,8 @@
+package fr.dawan.projet1.ws;
+
+import javax.ws.rs.ext.ExceptionMapper;
+
+//type générique, on met l exception qu'on veut
+public class InvalideInputExceptionMapper implements ExceptionMapper<InvalideInputExceptionMapper> {
+
+}

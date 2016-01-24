@@ -1,0 +1,17 @@
+package fr.dawan.project.injection;
+
+public class IsbnGenerator {
+	
+	private static int NB;
+	
+	public IsbnGenerator(){
+		System.out.println("inside IsbnGenerator constructor");
+	}
+	
+	public String generateNumber(){
+		NB++;
+		return "XXXXX-" + NB;
+		
+	}
+
+}

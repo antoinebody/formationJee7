@@ -1,0 +1,19 @@
+package fr.dawan.project.injection;
+
+import javax.inject.Named;
+
+@Named // si aucun nom donné le bean s'appelera isbnGenerator
+public class IsbnGenerator {
+	
+	private static int NB;
+	
+	public IsbnGenerator(){
+		System.out.println("inside IsbnGenerator constructor");
+	}
+	
+	public String generateNumber(){
+		return "XXXXX-" + ++NB;
+		
+	}
+
+}

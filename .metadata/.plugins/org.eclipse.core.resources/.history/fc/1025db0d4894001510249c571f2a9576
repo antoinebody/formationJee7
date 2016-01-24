@@ -1,0 +1,35 @@
+package fr.dawan.projet1.ws;
+
+import static org.junit.Assert.*;
+
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import fr.dawan.projet1.ws.beans.CompagnieAerienne;
+
+public class CompagnieTest {
+	
+	private static ValidatorFactory vf;
+	private static Validator validator;
+	
+	private static CompagnieAerienne compagnieA;
+	
+	@BeforeClass
+	public static void setUpBeforeClass(){
+		vf = Validation.buildDefaultValidatorFactory();
+		validator = vf.getValidator();
+		
+		compagnieA = new CompagnieAerienne(0,"aa"),
+		
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

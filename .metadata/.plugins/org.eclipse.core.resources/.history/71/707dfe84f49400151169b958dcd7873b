@@ -1,0 +1,14 @@
+package fr.dawan.project.jpa;
+
+import java.util.UUID;
+
+public enum EtatProduit {
+	
+	NEUF,OCCASION;
+	
+	public static void main(String[] args) {
+		UUID random = UUID.randomUUID();
+		System.out.println(random.toString().length());
+	}
+
+}

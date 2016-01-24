@@ -1,0 +1,9 @@
+package fr.dawan.projet1.ws.validator.custom;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+@Target(value={ElementType.FIELD,ElementType.TYPE))
+public @interface CustomValidatorAnnotation {
+
+}

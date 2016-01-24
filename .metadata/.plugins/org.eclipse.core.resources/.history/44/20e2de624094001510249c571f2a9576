@@ -1,0 +1,30 @@
+package fr.dawan.projet1.ws;
+
+import java.io.IOException;
+
+import javax.ws.rs.container.ContainerRequestContext;
+import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.core.UriInfo;
+
+public class MyRequestFilter implements ContainerRequestFilter {
+	
+	//test pour voir s il est bien instancié
+	public MyRequestFilter() {
+		System.out.println("init MyRequestFilter");
+	}
+
+	@Override
+	public void filter(ContainerRequestContext requestContext) throws IOException {
+		UriInfo uriInfo = requestContext.getUriInfo();
+		MultivaluedMap<String, String> queryParameters = uriInfo.getQueryParameters();
+		String user = queryParameters.getFirst("user");
+		
+		if(user==null)
+		
+		requestContext.abortWith(response);
+		
+
+	}
+
+}

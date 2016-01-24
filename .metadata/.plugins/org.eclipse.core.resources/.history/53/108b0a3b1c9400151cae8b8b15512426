@@ -1,0 +1,9 @@
+package fr.dawan.projet1.client;
+
+public class ClientWS {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package fr.dawan.project.batch.chunk;
+
+import javax.batch.api.chunk.ItemProcessor;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+@Named
+@RequestScoped
+public class MyItemProcessor implements ItemProcessor {
+
+	@Override
+	public Object processItem(Object item) throws Exception {
+		System.out.println("**** MyItemProcessor::processItem  : " + item);
+		return null;
+	}
+
+}

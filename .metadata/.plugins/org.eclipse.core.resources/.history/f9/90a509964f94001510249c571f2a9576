@@ -1,0 +1,21 @@
+package fr.dawan.projet1.ws.validator.custom;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+import javax.validation.Constraint;
+
+@Target(value={ElementType.FIELD})
+@Retention(value=RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = CheckCaseValidator.class)
+@Documented
+public @interface CheckCase {
+
+	CaseMode caseMode();
+	String message() default "default CheckCase";
+	
+
+}

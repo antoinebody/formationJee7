@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Projet Jee7</title>
+</head>
+<body>
+	<h3>JSON-P</h3>
+	<a title="JSON-P" href="JSONController">Traitement Json</a>
+</body>
+</html>

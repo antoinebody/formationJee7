@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;fr.dawan.peer.WebsocketPeer&apos; to &apos;WebSocketPeer&apos;&#x0D;&#x0A;- Original project: &apos;ProjWebsocketClient&apos;&#x0D;&#x0A;- Original element: &apos;fr.dawan.peer.WebsocketPeer&apos;&#x0D;&#x0A;- Renamed element: &apos;fr.dawan.peer.WebSocketPeer&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;WebsocketPeer&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;fr.dawan.peer{WebsocketPeer.java[WebsocketPeer" matchStrategy="1" name="WebSocketPeer" qualified="false" references="true" similarDeclarations="false" stamp="1448356553538" textual="false" version="1.0"/>
+</session>
